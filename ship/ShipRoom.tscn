@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfl8r2blfmi2h"]
+
+[ext_resource type="Script" path="res://ship/ShipRoom.gd" id="1_2gyaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(960, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_left_wall"]
+size = Vector2(48, 540)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_right_wall"]
+size = Vector2(48, 540)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ceiling"]
+size = Vector2(960, 48)
+
+[node name="ShipRoom" type="Node2D"]
+script = ExtResource("1_2gyaq")
+
+[node name="Collision" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Collision"]
+position = Vector2(0, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/Floor"]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="LeftWall" type="StaticBody2D" parent="Collision"]
+position = Vector2(-456, -90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/LeftWall"]
+shape = SubResource("RectangleShape2D_left_wall")
+
+[node name="RightWall" type="StaticBody2D" parent="Collision"]
+position = Vector2(456, -90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/RightWall"]
+shape = SubResource("RectangleShape2D_right_wall")
+
+[node name="Ceiling" type="StaticBody2D" parent="Collision"]
+position = Vector2(0, -360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/Ceiling"]
+shape = SubResource("RectangleShape2D_ceiling")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-360, 100)
+
+[node name="ShipCamera" type="Camera2D" parent="."]
+position = Vector2(0, -90)
+enabled = true
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Systems" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
