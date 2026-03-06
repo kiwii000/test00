@@ -3,10 +3,14 @@ class_name ShipRoom
 
 @export var player_spawn_path: NodePath = NodePath("PlayerSpawn")
 @export var ship_camera_path: NodePath = NodePath("ShipCamera")
+@export var player_path: NodePath = NodePath("Player")
 
 signal ship_room_ready(spawn_position: Vector2)
 
 func _ready() -> void:
+	var player := get_node_or_null(player_path) as Node2D
+	if player != null:
+		player.global_position = get_player_spawn_position()
 	ship_room_ready.emit(get_player_spawn_position())
 
 func get_player_spawn_position() -> Vector2:

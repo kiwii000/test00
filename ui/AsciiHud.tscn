@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://ui/AsciiRenderer.gd" id="1_j3675"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_prompt"]
+font_size = 20
+
+[node name="AsciiHud" type="CanvasLayer"]
+script = ExtResource("1_j3675")
+
+[node name="AsciiLabel" type="RichTextLabel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+text = ""
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 592.0
+offset_right = 612.0
+offset_bottom = 632.0
+label_settings = SubResource("LabelSettings_prompt")
+text = ""
