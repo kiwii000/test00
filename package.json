@@ -1,0 +1,10 @@
+{
+  "name": "ship-ascii-browser-slice",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "node -e \"console.log('No build step required for static browser app')\""
+  }
+}
