@@ -1,0 +1,34 @@
+:root {
+  color-scheme: dark;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+#app {
+  position: relative;
+  width: min(100vw, 1152px);
+  margin: 0 auto;
+}
+
+#game {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #334155;
+  background: #020617;
+}
+
+#prompt {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  min-height: 1.5em;
+  color: #f8fafc;
+  text-shadow: 0 0 4px #000;
+  pointer-events: none;
+}
